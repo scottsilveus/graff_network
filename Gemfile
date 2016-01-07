@@ -40,6 +40,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'teaspoon-mocha'
   gem 'magic_lamp'
+  gem 'rubocop', require: false
 end
 
 group :development do
