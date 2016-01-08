@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108195713) do
+ActiveRecord::Schema.define(version: 20160108203340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20160108195713) do
     t.string   "state"
     t.string   "country"
   end
+
+  create_table "user_artwork_lookups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "artwork_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_artwork_lookups", ["artwork_id"], name: "index_user_artwork_lookups_on_artwork_id", using: :btree
+  add_index "user_artwork_lookups", ["user_id"], name: "index_user_artwork_lookups_on_user_id", using: :btree
 
   create_table "user_crew_lookups", force: :cascade do |t|
     t.integer  "user_id"
