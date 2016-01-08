@@ -3,4 +3,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable
+
+  has_many :user_crew_lookups, dependent: :destroy
+  has_many :crews, :through => :user_crew_lookups, dependent: :destroy
+
+  validates_associated :crews, :user_crew_lookups
 end
