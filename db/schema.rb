@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108215618) do
+ActiveRecord::Schema.define(version: 20160108225649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(version: 20160108215618) do
 
   add_index "user_crew_lookups", ["crew_id"], name: "index_user_crew_lookups_on_crew_id", using: :btree
   add_index "user_crew_lookups", ["user_id"], name: "index_user_crew_lookups_on_user_id", using: :btree
+
+  create_table "user_fave_user_lookups", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_fave_user_lookups", ["followee_id"], name: "index_user_fave_user_lookups_on_followee_id", using: :btree
+  add_index "user_fave_user_lookups", ["follower_id", "followee_id"], name: "index_user_fave_user_lookups_on_follower_id_and_followee_id", unique: true, using: :btree
+  add_index "user_fave_user_lookups", ["follower_id"], name: "index_user_fave_user_lookups_on_follower_id", using: :btree
 
   create_table "user_favorited_artwork_lookups", force: :cascade do |t|
     t.integer  "user_id"
