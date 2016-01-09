@@ -48,3 +48,5 @@ Style/SignalException:
   Enabled: false
 Style/SpaceAroundEqualsInParameterDefault:
   Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
