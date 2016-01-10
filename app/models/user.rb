@@ -21,4 +21,16 @@ class User < ActiveRecord::Base
     :favorited_crews, :user_favorited_crew_lookups, :user_favorited_artwork_lookups,
     :favorited_artworks
   validates :user_type, presence: true
+
+  validates :first_name, length: {maximum: 30}
+  validates :last_name, length: {maximum: 50}
+  validates :tag_name, length: {maximum: 50}
+  validates :gender, length: {maximum: 6}
+  validates :summary, length: {maximum: 2500}
+  validates :status, 
+  validates :instagram, length: {maximum: 100}
+  validates :city, length: {maximum: 100}
+  validates :state, length: {maximum: 100}
+  validates :country, length: {maximum: 100}
+
 end
