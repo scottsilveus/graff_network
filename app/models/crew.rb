@@ -6,12 +6,12 @@ class Crew < ActiveRecord::Base
   has_many :user_favorited_crew_lookups
   has_many :users, through: :user_crew_lookups, dependent: :destroy
 
-  #need to add validation for email =>sync with devise?
-  validates :city, length: {maximum: 100}
-  validates :country, length: {maximum: 100}
-  validates :name, length:{maximum: 50}
-  validates :state, length: {maximum: 100}
-  validates :summary, length:{maximum: 1000}
+  # need to add validation for email =>sync with devise?
+  validates :city,    length: { maximum: 100 }
+  validates :country, length: { maximum: 100 }
+  validates :name,    length: { maximum: 50 }
+  validates :state,   length: { maximum: 100 }
+  validates :summary, length: { maximum: 1000 }
 
   validates_associated :artworks, :crew_artwork_lookups, :favorited_by,
     :user_crew_lookups, :user_favorited_crew_lookups, :users
