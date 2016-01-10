@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CrewArtworkLookup, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:artwork)}
+  it { should belong_to(:crew)}
 end
