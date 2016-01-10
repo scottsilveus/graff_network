@@ -35,6 +35,11 @@ gem 'omniauth'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'sprockets', '< 3.0'
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.0'
