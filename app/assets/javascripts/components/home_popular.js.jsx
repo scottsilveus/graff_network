@@ -1,7 +1,7 @@
 var HomePopular = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className='HomePopular'>
         <h1>Popular</h1>
         <p>Import Carousel</p>
       </div>

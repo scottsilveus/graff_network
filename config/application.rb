@@ -24,3 +24,9 @@ module GraffNetwork
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+module ReactTesting
+  class Application < Rails::Application
+    config.react.addons = true
+  end
+end
