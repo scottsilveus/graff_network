@@ -44,11 +44,12 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'
-  gem 'teaspoon-mocha'
+  gem 'dotenv-rails'
   gem 'magic_lamp'
+  gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', require: false
+  gem 'teaspoon-mocha'
 end
 
 group :development do
