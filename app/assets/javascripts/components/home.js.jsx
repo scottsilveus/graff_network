@@ -1,7 +1,7 @@
 var HomeIndex = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className='HomeIndex'>
         <HomeTop />
         <HomeFeatured />
         <HomePopular />

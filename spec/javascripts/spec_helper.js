@@ -42,4 +42,6 @@
 //= require support/sinon-chai
 //= require magic_lamp
 
-window.expect = chai.expect;
+window.expect    = chai.expect;
+window.React     = React
+window.TestUtils = React.addons.TestUtils
