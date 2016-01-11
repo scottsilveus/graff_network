@@ -10,7 +10,7 @@ var ProfileDetails = React.createClass({
     } else {
       name = this.props.user.first_name + ' ' + this.props.user.last_name
     }
-    console.log(this.props.user)
+
     return (
       <div>
         <h1>{name}</h1>
