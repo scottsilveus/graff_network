@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth'
+gem 'pry-rails', :group => :development
 gem 'react-rails'
 
 # Use Capistrano for deployment
