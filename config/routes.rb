@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'artist_search' => 'users#index'
+  get 'crew_search' => 'crews#index'
   resources :users
+  resources :crews
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
