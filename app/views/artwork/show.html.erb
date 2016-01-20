@@ -1,0 +1,10 @@
+<% if @user_id %>
+  <%= link_to 'Destroy', user_artwork_path(@user_id, @artwork),  method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <%= link_to 'Destroy', crew_artwork_path(@crew_id, @artwork),  method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<img src="<%= @artwork.picture.url %>" /><br/>
+<img src="<%= @artwork.picture.large %>" /><br/>
+<img src="<%= @artwork.picture.medium %>" /><br/>
+<img src="<%= @artwork.picture.thumb %>" /><br/>
+<img src="<%= @artwork.picture.square %>" /><br/>

@@ -15,8 +15,14 @@ Rails.application.routes.draw do
   get 'artist_search' => 'users#index'
   get 'crew_search' => 'crews#index'
 
-  resources :users
-  resources :crews
+  resources :users do
+    resources :artwork
+  end
+
+  resources :crews do
+    resources :artwork
+  end
+
   resources :featured_content
   get 'about' => 'about#show'
   get 'users/:id/feed' => 'users#feed'
