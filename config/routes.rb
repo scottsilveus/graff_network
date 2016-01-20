@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'users/:id/feed' => 'users#feed'
 
   resources :learn,   only: [:index, :show]
+  resources :news,    only: [:index, :show]
 
 
   # Example of regular route:
