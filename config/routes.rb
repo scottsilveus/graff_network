@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'about' => 'about#show'
   get 'users/:id/feed' => 'users#feed'
 
+  resources :learn, only: [:index, :show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
