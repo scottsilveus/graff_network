@@ -28,8 +28,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'aws-sdk', '~> 2'
 gem 'bootstrap-sass'
+gem 'carrierwave'
 gem 'devise'
+gem 'mini_magick'
 gem 'omniauth'
 gem 'pry-rails', :group => :development
 gem 'react-rails'
