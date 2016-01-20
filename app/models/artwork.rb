@@ -1,4 +1,6 @@
 class Artwork < ActiveRecord::Base
+  mount_uploader :picture, ImageUploader
+
   has_many :crew_artwork_lookups
   has_many :crews, through: :crew_artwork_lookups, dependent: :destroy
   has_many :favorited_by, through: :user_favorited_artwork_lookups, source: :user, dependent: :destroy

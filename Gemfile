@@ -32,6 +32,7 @@ gem 'aws-sdk', '~> 2'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'devise'
+gem 'fog'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'pry-rails', :group => :development

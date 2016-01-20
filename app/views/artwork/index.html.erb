@@ -1,0 +1,20 @@
+<% @artworks.each do |artwork| %>
+  <% if @user_id%>
+    <%= link_to user_artwork_path(@user_id, artwork) do %>
+      <img src="<%= artwork.picture.square %>">
+    <% end %>
+  <% else %>
+    <%= link_to user_artwork_path(@crew_id, artwork) do %>
+      <img src="<%= artwork.picture.square %>">
+    <% end %>
+  <% end %>
+<% end %>
+
+<br>
+
+
+<% if @user_id%>
+  <%= link_to 'New artwork', new_user_artwork_path %>
+<% else %>
+  <%= link_to 'New artwork', new_crew_artwork_path %>
+<% end %>
