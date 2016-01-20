@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :crews
+  resources :featured_content
+  get 'about' => 'about#show'
+  get 'users/:id/feed' => 'users#feed'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
