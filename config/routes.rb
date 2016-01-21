@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :learn,   only: [:index, :show]
   resources :news,    only: [:index, :show]
+  resources :maps,    only: [:index, :show]
 
 
   # Example of regular route:
