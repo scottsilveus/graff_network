@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'artist_search' => 'users#index'
   get 'crew_search' => 'crews#index'
+  get 'news' => 'news#index'
+  get 'map_search' => 'maps#index'
+  get 'learn' => 'learn#index'
 
   resources :users do
     resources :artwork
@@ -23,9 +26,10 @@ Rails.application.routes.draw do
     resources :artwork
   end
 
-  get 'artwork/popular' => 'artwork#popular'
+  get 'popular' => 'artwork#popular'
 
   resources :featured_content
+  get 'featured' => 'featured_content#index'
   get 'about' => 'about#show'
   get 'users/:id/feed' => 'users#feed'
 
