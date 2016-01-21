@@ -23,9 +23,16 @@ Rails.application.routes.draw do
     resources :artwork
   end
 
+  get 'artwork/popular' => 'artwork#popular'
+
   resources :featured_content
   get 'about' => 'about#show'
   get 'users/:id/feed' => 'users#feed'
+
+  resources :learn,   only: [:index, :show]
+  resources :news,    only: [:index, :show]
+  resources :maps,    only: [:index, :show]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

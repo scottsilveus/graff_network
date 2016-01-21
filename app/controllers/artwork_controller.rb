@@ -62,6 +62,10 @@ class ArtworkController < ApplicationController
     redirect_to user_artwork_index_path(params[:user_id]), notice: "Upload was successfully destroyed."
   end
 
+  def popular
+    @artwork = Artwork.all
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
