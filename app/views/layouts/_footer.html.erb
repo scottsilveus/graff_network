@@ -1,34 +1,54 @@
-<footer class="footer">
-  <nav>
-    <ul>
-      <p><b>Art</b></p>
-      <li><%= link_to "News", root_path %></li>
-      <li><%= link_to "Events", root_path %></li>
-      <li><%= link_to "Featured",   root_path %></li>
-      <li><%= link_to "Popular", root_path %></li>
-    </ul>
-    <ul>
-      <p><b>Browse</b></p>
-      <li><%= link_to "Art", root_path %></li>
-      <li><%= link_to "Artists", root_path %></li>
-      <li><%= link_to "Crews",   root_path %></li>
-      <li><%= link_to "Location", root_path %></li>
-    </ul>
-    <ul>
-      <p><b>Learn</b></p>
-      <li><%= link_to "Tutorials", root_path %></li>
-      <li><%= link_to "Reviews", root_path %></li>
-    </ul>
-    <ul>
-      <p><b>Store</b></p>
-      <li><%= link_to "Something", root_path %></li>
-      <li><%= link_to "Something2", root_path %></li>
-    </ul>
-    <ul>
-      <p><b>Company</b></p>
-      <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Contact Us", root_path %></li>
-      <li><%= link_to "Write for Us",   root_path %></li>
-    </ul>
-  </nav>
+<footer class="container-fluid footer">
+  <div class="row">
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Art</h4>
+        <li><%= link_to "News", news_path %></li>
+        <li><%= link_to "Events", root_path %></li>
+        <li><%= link_to "Featured",   featured_path %></li>
+        <li><%= link_to "Popular", popular_path %></li>
+      </ul>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Browse</h4>
+        <li><%= link_to "Art", root_path %></li>
+        <li><%= link_to "Artists", artist_search_path %></li>
+        <li><%= link_to "Crews",   crew_search_path %></li>
+        <li><%= link_to "Location", map_search_path %></li>
+      </ul>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Learn</h4>
+        <li><%= link_to "Tutorials", learn_path %></li>
+        <li><%= link_to "Reviews", learn_path %></li>
+      </ul>
+    </div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Store</h4>
+        <li><%= link_to "Something", root_path %></li>
+        <li><%= link_to "Something2", root_path %></li>
+      </ul>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Company</h4>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact Us", root_path %></li>
+        <li><%= link_to "Write for Us",   root_path %></li>
+      </ul>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+      <ul>
+        <h4>Sign up for the Unbuffable Newsletter</h4>
+        <input type='email' name='email' value='email' />
+        <h4>Social media shit goes here</h4>
+      </ul>
+    </div>
+  </div>
+    <p class="text-center">© 2016 UNBUFFABLE Inc. All rights reserved. Bullshibullshitbullshit</p>
+  </div>
 </footer>
