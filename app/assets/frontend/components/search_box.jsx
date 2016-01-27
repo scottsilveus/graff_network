@@ -1,11 +1,9 @@
 import React from 'react'
 
-class SearchBox extends React.Component {
-  propTypes: {
-    info: React.PropTypes.string.isRequired
-  },
+export default class SearchBox extends React.Component {
 
-  render: function() {
+
+  render() {
     return (
       <div className='SearchBox'>
         <input placeholder={this.props.info}/>
@@ -13,3 +11,7 @@ class SearchBox extends React.Component {
     )
   }
 };
+
+SearchBox.propTypes = {
+  info: React.PropTypes.string.isRequired
+}

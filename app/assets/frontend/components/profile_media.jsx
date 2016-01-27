@@ -1,9 +1,9 @@
 import React from 'react'
 import MediaSideGrid from './media_side_grid'
 
-class ProfileMedia extends React.Comopnent {
+export default class ProfileMedia extends React.Comopnent {
 
-  render: function() {
+  render() {
     return (
       <div className='ProfileMedia'>
         <div>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-class Feed extends React.Component {
+export default class Feed extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>My Feed</h1>

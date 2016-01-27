@@ -1,8 +1,8 @@
 import React from 'react'
 
-class HomeFeatured extends React.Component {
+export default class HomeFeatured extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div className='HomeFeatured'>
         <a href='http://localhost:3000/featured_content'><h1>Featured</h1></a>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-class ProfileInstagram extends React.Component {
+export default class ProfileInstagram extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div className='ProfileInstagram'>
         <h1>ADD ARTIST INSTAGRAM HERE</h1>

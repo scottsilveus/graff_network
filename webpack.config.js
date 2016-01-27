@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./app/assets/frontend/main.jsx",
+  entry: "./app/assets/frontend/App.jsx",
 
   output: {
     path: __dirname + "/app/assets/javascripts",
@@ -9,7 +9,6 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
-
   module: {
     loaders: [
       {

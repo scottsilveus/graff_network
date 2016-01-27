@@ -1,8 +1,8 @@
 import React from 'react'
 
-class Learn extends React.Component {
+export default class Learn extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <input type='checkbox' name='tutorials' value='tutorials' />Tutorials

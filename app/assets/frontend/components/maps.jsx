@@ -1,8 +1,8 @@
 import React from 'react'
 
-class Maps extends React.Component {
+export default class Maps extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>Map Search</h1>

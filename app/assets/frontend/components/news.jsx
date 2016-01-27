@@ -1,8 +1,8 @@
 import React from 'react'
 
-class News extends React.Component {
+export default class News extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>News</h1>

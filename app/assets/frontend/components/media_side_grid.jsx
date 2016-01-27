@@ -1,8 +1,8 @@
 import React from 'react'
 
-class MediaSideGrid extends React.Component {
+export default class MediaSideGrid extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <div>

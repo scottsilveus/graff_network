@@ -1,7 +1,7 @@
 import React from 'react'
 
-class HomeTop extends React.Component {
-  render: function() {
+export default class HomeTop extends React.Component {
+  render() {
     return (
       <div className='HomeTop'>
         <h1>Unbuffable</h1>

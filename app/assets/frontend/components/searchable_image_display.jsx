@@ -1,8 +1,8 @@
 import React from 'react'
 
-class SearchableImageDisplay extends React.Component {
+export default class SearchableImageDisplay extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>SEARCHABLE IMAGES OF ARTISTS WITH THEIR NAME AND LOCATION</h1>

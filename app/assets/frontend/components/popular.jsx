@@ -1,11 +1,11 @@
 import React from 'react'
 
-class Popular extends React.Component {
+export default class Popular extends React.Component {
   propTypes: {
     artwork: React.PropTypes.array.isRequired
   },
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>Popular</h1>

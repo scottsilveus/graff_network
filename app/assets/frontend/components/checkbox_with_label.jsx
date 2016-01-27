@@ -1,16 +1,16 @@
 import React from 'react'
 
-class CheckboxWithLabel extends React.Component {
+export default class CheckboxWithLabel extends React.Component {
 
-  getInitialState: function () {
+  getInitialState() {
     return { isChecked: false }
   },
 
-  onChange: function () {
+  onChange() {
     this.setState({isChecked: !this.state.isChecked});
   },
 
-  render: function () {
+  render() {
     var label = this.state.isChecked ? this.props.labelOn : this.props.labelOff;
 
     return (

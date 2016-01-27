@@ -1,9 +1,9 @@
 import React from 'react'
 import SearchBox from './search_box'
 
-class CrewSearch extends React.Component {
+export default class CrewSearch extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div className='CrewSearch'>
         <SearchBox info='name'/>

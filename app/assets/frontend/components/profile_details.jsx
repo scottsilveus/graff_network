@@ -1,11 +1,11 @@
 import React from 'react'
 
-class ProfileDetails extends React.Component {
+export default class ProfileDetails extends React.Component {
   propTypes: {
     user: React.PropTypes.object,
   },
 
-  render: function() {
+  render() {
     var name;
     if (this.props.user.tag_name) {
       name = this.props.user.tag_name

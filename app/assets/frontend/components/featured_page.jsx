@@ -1,8 +1,8 @@
 import React from 'react'
 
-class FeaturedPage extends React.Component {
+export default class FeaturedPage extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <div>
         <h1>Featured Content</h1>
