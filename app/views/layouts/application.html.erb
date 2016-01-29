@@ -11,9 +11,10 @@
 
   <%= render 'layouts/header' %>
   <div id='app'>
-    <%= yield %>
   </div>
+  <%= yield %>
   <%= render 'layouts/footer' %>
+
 </body>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

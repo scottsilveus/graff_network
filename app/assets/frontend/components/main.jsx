@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react"
+
+import NavBar from "./navbar"
+import Footer from "./footer"
 
 export default class Main extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <h1>NavBar</h1>
         <div className="container">
           {this.props.children}
         </div>
