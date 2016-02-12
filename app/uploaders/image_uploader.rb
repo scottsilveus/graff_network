@@ -12,7 +12,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :large do
-    process resize_to_limit: [800, 800]
+    process resize_to_fill: [1280, 850]
   end
 
   version :medium, from_version: :large do
