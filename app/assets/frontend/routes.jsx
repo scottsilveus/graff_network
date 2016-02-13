@@ -11,6 +11,7 @@ import Maps     from "./components/maps"
 import ArtistSearch     from "./components/artist_search"
 import CrewSearch     from "./components/crew_search"
 import FeaturedPage from "./components/featured_page"
+import Popular from "./components/popular"
 
 
 export default (
@@ -24,5 +25,6 @@ export default (
     <Route path="/maps" component={Maps} />
     <Route path="/artist_search" component={ArtistSearch} />
     <Route path="/crew_search" component={CrewSearch} />
+    <Route path="/popular" component={Popular} />
   </Route>
 )
