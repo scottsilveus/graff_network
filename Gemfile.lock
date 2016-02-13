@@ -353,8 +353,6 @@ GEM
     tilt (1.4.1)
     tins (1.6.0)
     trollop (2.1.2)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -399,6 +397,8 @@ DEPENDENCIES
   spring (= 1.6.1)
   sprockets (< 3.0)
   teaspoon-mocha
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.11.2

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import Carousel from './carousel'
-
 export default class HomeFeatured extends React.Component {
 
   render() {
