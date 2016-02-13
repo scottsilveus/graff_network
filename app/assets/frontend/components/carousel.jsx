@@ -1,10 +1,7 @@
-var Carousel = React.createClass({
+import React from 'react'
 
-  render: function() {
-    propTypes: {
-      images: React.PropTypes.array.isRequired
-    }
-
+export default class Carousel extends React.Component {
+  render() {
     return (
       <div id="carousel" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
@@ -37,4 +34,5 @@ var Carousel = React.createClass({
       </div>
     );
   }
-});
+};
+Carousel.propTypes = { images: React.PropTypes.array.isRequired }
