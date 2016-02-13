@@ -1,11 +1,11 @@
 <% @artworks.each do |artwork| %>
   <% if @user_id%>
     <%= link_to user_artwork_path(@user_id, artwork) do %>
-      <img src="<%= artwork.picture.square %>">
+      <img src="<%= artwork.picture.thumb.url %>">
     <% end %>
   <% else %>
     <%= link_to user_artwork_path(@crew_id, artwork) do %>
-      <img src="<%= artwork.picture.square %>">
+      <img src="<%= artwork.picture.thumb.url %>">
     <% end %>
   <% end %>
 <% end %>
