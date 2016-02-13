@@ -6,8 +6,10 @@
 }
 
 .HomeTop {
-  height:     70vh;
-  margin-top: 25vh;
+  height:     108vh;
+  margin-top: -50px;
+  background-image: url('a.png');
+  background-size: cover;
 }
 
 .sign-in {
@@ -18,4 +20,16 @@
 
 .HomeFeatured {
   background-color: #9FA9A0;
+}
+
+#HomeHeader{
+  padding-top: 40vh;
+  margin: 0;
+}
+
+#HomePara{
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
 }
