@@ -13,9 +13,7 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-body {
-  padding-top: 60px;
-}
+
 
 section {
   overflow: auto;
@@ -85,4 +83,26 @@ footer {
     float: left;
     list-style: none;
   }
+}
+
+/* Shit to move */
+
+.palert {
+    padding: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.notice {
+  margin: 0;
+}
+
+.ubnav {
+  margin-bottom: 0;
+}
+
+#foo {
+  border: 0;
+  margin: 0;
 }

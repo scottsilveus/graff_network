@@ -24876,12 +24876,12 @@
 	        { className: 'HomeTop' },
 	        _react2.default.createElement(
 	          'h1',
-	          null,
+	          { id: 'HomeHeader' },
 	          'Unbuffable'
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          null,
+	          { id: 'HomePara' },
 	          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	        ),
 	        _react2.default.createElement(
@@ -25008,11 +25008,7 @@
 	          null,
 	          'Popular'
 	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Import Carousel'
-	        )
+	        _react2.default.createElement(Carousel, { images: this.props.images })
 	      );
 	    }
 	  }]);
@@ -25022,6 +25018,7 @@
 
 	exports.default = HomePopular;
 	;
+	HomePopular.propTypes = { images: _react2.default.PropTypes.array };
 
 /***/ },
 /* 221 */

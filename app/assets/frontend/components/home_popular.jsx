@@ -5,8 +5,9 @@ export default class HomePopular extends React.Component {
     return (
       <div className='HomePopular'>
         <h1>Popular</h1>
-        <p>Import Carousel</p>
+        <Carousel images={this.props.images} />
       </div>
     )
   }
 };
+  HomePopular.propTypes = { images: React.PropTypes.array }

@@ -33,6 +33,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'devise'
 gem 'fog'
+gem 'lodash-rails'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'pry-rails', :group => :development
