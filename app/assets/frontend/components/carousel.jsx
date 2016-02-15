@@ -1,6 +1,21 @@
-import React from 'react'
+import React         from 'react'
+import CarouselActions from '../actions/carousel_actions'
 
 export default class Carousel extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  getsImages() {
+    console.log('one', this)
+    CarouselActions.getImages()
+      .then((this.onSuccess).bind(this))
+  }
+
+  onSuccess(response) {
+    return response.body
+  }
+
   render() {
     return (
       <div id="carousel" className="carousel slide" data-ride="carousel">
@@ -10,7 +25,7 @@ export default class Carousel extends React.Component {
           <li data-target="#carousel" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
-          {this.props.images.map(function(image, index) {
+          {this.state.images.map(function(image, index) {
             if ( index === 0 ) {
               return (
                 <div key={index} className="img-responsive center-block item active">
@@ -35,4 +50,3 @@ export default class Carousel extends React.Component {
     );
   }
 };
-Carousel.propTypes = { images: React.PropTypes.array.isRequired }

@@ -24714,43 +24714,43 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Main = __webpack_require__(221);
+	var _Main = __webpack_require__(237);
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Users = __webpack_require__(224);
+	var _Users = __webpack_require__(240);
 
 	var _Users2 = _interopRequireDefault(_Users);
 
-	var _about = __webpack_require__(228);
+	var _about = __webpack_require__(244);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _learn = __webpack_require__(229);
+	var _learn = __webpack_require__(245);
 
 	var _learn2 = _interopRequireDefault(_learn);
 
-	var _news = __webpack_require__(230);
+	var _news = __webpack_require__(246);
 
 	var _news2 = _interopRequireDefault(_news);
 
-	var _maps = __webpack_require__(231);
+	var _maps = __webpack_require__(247);
 
 	var _maps2 = _interopRequireDefault(_maps);
 
-	var _artist_search = __webpack_require__(225);
+	var _artist_search = __webpack_require__(241);
 
 	var _artist_search2 = _interopRequireDefault(_artist_search);
 
-	var _crew_search = __webpack_require__(232);
+	var _crew_search = __webpack_require__(248);
 
 	var _crew_search2 = _interopRequireDefault(_crew_search);
 
-	var _featured_page = __webpack_require__(233);
+	var _featured_page = __webpack_require__(249);
 
 	var _featured_page2 = _interopRequireDefault(_featured_page);
 
-	var _popular = __webpack_require__(234);
+	var _popular = __webpack_require__(250);
 
 	var _popular2 = _interopRequireDefault(_popular);
 
@@ -24795,7 +24795,7 @@
 
 	var _home_featured2 = _interopRequireDefault(_home_featured);
 
-	var _home_popular = __webpack_require__(220);
+	var _home_popular = __webpack_require__(236);
 
 	var _home_popular2 = _interopRequireDefault(_home_popular);
 
@@ -24917,6 +24917,10 @@
 
 	var _reactRouter = __webpack_require__(159);
 
+	var _carousel = __webpack_require__(220);
+
+	var _carousel2 = _interopRequireDefault(_carousel);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24937,6 +24941,7 @@
 	  _createClass(HomeFeatured, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log(this.state);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'HomeFeatured' },
@@ -24949,11 +24954,7 @@
 	            'Featured'
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Import Carousel Here'
-	        )
+	        _react2.default.createElement(_carousel2.default, null)
 	      );
 	    }
 	  }]);
@@ -24966,6 +24967,958 @@
 
 /***/ },
 /* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _carousel_actions = __webpack_require__(221);
+
+	var _carousel_actions2 = _interopRequireDefault(_carousel_actions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Carousel = function (_React$Component) {
+	  _inherits(Carousel, _React$Component);
+
+	  function Carousel(props) {
+	    _classCallCheck(this, Carousel);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Carousel).call(this, props));
+	  }
+
+	  _createClass(Carousel, [{
+	    key: 'getsImages',
+	    value: function getsImages() {
+	      console.log('one', this);
+	      _carousel_actions2.default.getImages().then(this.onSuccess.bind(this));
+	    }
+	  }, {
+	    key: 'onSuccess',
+	    value: function onSuccess(response) {
+	      return response.body;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'carousel', className: 'carousel slide', 'data-ride': 'carousel' },
+	        _react2.default.createElement(
+	          'ol',
+	          { className: 'carousel-indicators' },
+	          _react2.default.createElement('li', { 'data-target': '#carousel', 'data-slide-to': '0', className: 'active' }),
+	          _react2.default.createElement('li', { 'data-target': '#carousel', 'data-slide-to': '1' }),
+	          _react2.default.createElement('li', { 'data-target': '#carousel', 'data-slide-to': '2' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'carousel-inner' },
+	          this.state.images.map(function (image, index) {
+	            if (index === 0) {
+	              return _react2.default.createElement(
+	                'div',
+	                { key: index, className: 'img-responsive center-block item active' },
+	                _react2.default.createElement('img', { src: image.picture.large.url, alt: image.name }),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'carousel-caption' },
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Caption Text'
+	                  )
+	                )
+	              );
+	            } else {
+	              return _react2.default.createElement(
+	                'div',
+	                { key: index, className: 'item img-responsive center-block' },
+	                _react2.default.createElement('img', { src: image.picture.large.url, alt: image.name }),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'carousel-caption' },
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Caption Text'
+	                  )
+	                )
+	              );
+	            }
+	          })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Carousel;
+	}(_react2.default.Component);
+
+	exports.default = Carousel;
+	;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _proquest = __webpack_require__(222);
+
+	exports.default = {
+	  getImages: function getImages(type) {
+	    var request = new _proquest.Request('GET', 'http://localhost:3000/featured_content');
+	    return request.set('Accept', 'application/json').set('Content-Type', 'application/json').send().end();
+	  }
+	};
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Response = __webpack_require__(223);
+	var Request  = __webpack_require__(225);
+
+	exports.Response = Response;
+	exports.Request  = Request;
+
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var merge = __webpack_require__(224);
+
+	var Response = function(xhr) {
+	  this.xhr    = xhr;
+	  this.text   = this.xhr.responseText;
+	  this.header = this.parseHeader(this.xhr.getAllResponseHeaders());
+	  this.status = this.xhr.status;
+	  this.body   = null;
+
+	  try {
+	    if (this.text) this.body = JSON.parse(this.text);
+	  } catch(error) {
+	    console.error(error);
+	  }
+	};
+
+	merge(Response.prototype, {
+	  parseHeader: function(string) {
+	    var lines  = string.split(/\r?\n/);
+	    var fields = {};
+	    var index, line, field, value;
+
+	    lines.pop(); // trailing CRLF
+
+	    for (var i = 0, len = lines.length; i < len; ++i) {
+	      line  = lines[i];
+	      index = line.indexOf(':');
+	      field = line.slice(0, index).toLowerCase();
+	      value = line.slice(index + 1).trim();
+	      fields[field] = value;
+	    }
+
+	    return fields;
+	  }
+	});
+
+	module.exports = Response;
+
+
+/***/ },
+/* 224 */
+/***/ function(module, exports) {
+
+	module.exports = function(object) {
+	  [].slice.call(arguments, 1).forEach(function(source) {
+	    for (var prop in source) {
+	      object[prop] = source[prop];
+	    }
+	  });
+
+	  return object;
+	};
+
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var merge     = __webpack_require__(224);
+	var ESPromise = __webpack_require__(226).Promise;
+	var Response  = __webpack_require__(223);
+
+	var Request = function(method, url) {
+	  this.method = method;
+	  this.url    = url;
+	  this.data   = {};
+	  this.header = {};
+	};
+
+	Request.partial = function(partOpts) {
+	  return function(options) {
+	    var merged  = merge(partOpts, options);
+	    var request = new Request(merged.method, merged.url);
+
+	    if (merged.header)  request.header  = merged.header;
+	    if (merged.data)    request.data    = merged.data;
+	    if (merged.catcher) request.catcher = merged.catcher;
+
+	    return request;
+	  };
+	};
+
+	merge(Request.prototype, {
+	  set: function(field, value) {
+	    this.header[field] = value;
+
+	    return this;
+	  },
+
+	  catch: function(func) {
+	    this.catcher = func;
+	  },
+
+	  send: function(data) {
+	    merge(this.data, data);
+
+	    return this;
+	  },
+
+	  end: function() {
+	    var self = this;
+
+	    var promise = new ESPromise(function(resolve, reject) {
+	      var xhr = new XMLHttpRequest();
+
+	      xhr.addEventListener('load', function() {
+	        if (xhr.status >= 200 && xhr.status <= 399) {
+	          resolve(new Response(xhr));
+	        } else {
+	          reject(new Response(xhr));
+	        }
+	      });
+
+	      xhr.addEventListener('error', function() {
+	        reject(new Response(xhr));
+	      });
+
+	      xhr.addEventListener('abort', function() {
+	        reject(new Response(xhr));
+	      });
+
+	      if (self.isXDomainRequest()) {
+	        xhr.withCredentials = true;
+	      }
+
+	      xhr.open(self.method, self.url, true);
+
+	      for (var field in self.header) {
+	        xhr.setRequestHeader(field, self.header[field]);
+	      }
+
+	      xhr.send(self.serialized());
+	    });
+
+	    if (this.catcher) promise.catch(this.catcher);
+
+	    return promise;
+	  },
+
+	  isXDomainRequest: function(hostname) {
+	    hostname = hostname || window.location.hostname;
+	    var hostnameMatch = this.url.match(/http[s]?:\/\/([^\/]*)/);
+
+	    return (hostnameMatch && hostnameMatch[1] !== hostname);
+	  },
+
+	  serialized: function() {
+	    return this.parser()(this.data);
+	  },
+
+	  parser: function() {
+	    if (this.method !== 'GET' && this.method !== 'HEAD') {
+	      return JSON.stringify;
+	    } else {
+	      return function(value) { return value; };
+	    }
+	  }
+	});
+
+	module.exports = Request;
+
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Promise = __webpack_require__(227).Promise;
+	var polyfill = __webpack_require__(235).polyfill;
+	exports.Promise = Promise;
+	exports.polyfill = polyfill;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var config = __webpack_require__(228).config;
+	var configure = __webpack_require__(228).configure;
+	var objectOrFunction = __webpack_require__(229).objectOrFunction;
+	var isFunction = __webpack_require__(229).isFunction;
+	var now = __webpack_require__(229).now;
+	var all = __webpack_require__(230).all;
+	var race = __webpack_require__(231).race;
+	var staticResolve = __webpack_require__(232).resolve;
+	var staticReject = __webpack_require__(233).reject;
+	var asap = __webpack_require__(234).asap;
+
+	var counter = 0;
+
+	config.async = asap; // default async is asap;
+
+	function Promise(resolver) {
+	  if (!isFunction(resolver)) {
+	    throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
+	  }
+
+	  if (!(this instanceof Promise)) {
+	    throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+	  }
+
+	  this._subscribers = [];
+
+	  invokeResolver(resolver, this);
+	}
+
+	function invokeResolver(resolver, promise) {
+	  function resolvePromise(value) {
+	    resolve(promise, value);
+	  }
+
+	  function rejectPromise(reason) {
+	    reject(promise, reason);
+	  }
+
+	  try {
+	    resolver(resolvePromise, rejectPromise);
+	  } catch(e) {
+	    rejectPromise(e);
+	  }
+	}
+
+	function invokeCallback(settled, promise, callback, detail) {
+	  var hasCallback = isFunction(callback),
+	      value, error, succeeded, failed;
+
+	  if (hasCallback) {
+	    try {
+	      value = callback(detail);
+	      succeeded = true;
+	    } catch(e) {
+	      failed = true;
+	      error = e;
+	    }
+	  } else {
+	    value = detail;
+	    succeeded = true;
+	  }
+
+	  if (handleThenable(promise, value)) {
+	    return;
+	  } else if (hasCallback && succeeded) {
+	    resolve(promise, value);
+	  } else if (failed) {
+	    reject(promise, error);
+	  } else if (settled === FULFILLED) {
+	    resolve(promise, value);
+	  } else if (settled === REJECTED) {
+	    reject(promise, value);
+	  }
+	}
+
+	var PENDING   = void 0;
+	var SEALED    = 0;
+	var FULFILLED = 1;
+	var REJECTED  = 2;
+
+	function subscribe(parent, child, onFulfillment, onRejection) {
+	  var subscribers = parent._subscribers;
+	  var length = subscribers.length;
+
+	  subscribers[length] = child;
+	  subscribers[length + FULFILLED] = onFulfillment;
+	  subscribers[length + REJECTED]  = onRejection;
+	}
+
+	function publish(promise, settled) {
+	  var child, callback, subscribers = promise._subscribers, detail = promise._detail;
+
+	  for (var i = 0; i < subscribers.length; i += 3) {
+	    child = subscribers[i];
+	    callback = subscribers[i + settled];
+
+	    invokeCallback(settled, child, callback, detail);
+	  }
+
+	  promise._subscribers = null;
+	}
+
+	Promise.prototype = {
+	  constructor: Promise,
+
+	  _state: undefined,
+	  _detail: undefined,
+	  _subscribers: undefined,
+
+	  then: function(onFulfillment, onRejection) {
+	    var promise = this;
+
+	    var thenPromise = new this.constructor(function() {});
+
+	    if (this._state) {
+	      var callbacks = arguments;
+	      config.async(function invokePromiseCallback() {
+	        invokeCallback(promise._state, thenPromise, callbacks[promise._state - 1], promise._detail);
+	      });
+	    } else {
+	      subscribe(this, thenPromise, onFulfillment, onRejection);
+	    }
+
+	    return thenPromise;
+	  },
+
+	  'catch': function(onRejection) {
+	    return this.then(null, onRejection);
+	  }
+	};
+
+	Promise.all = all;
+	Promise.race = race;
+	Promise.resolve = staticResolve;
+	Promise.reject = staticReject;
+
+	function handleThenable(promise, value) {
+	  var then = null,
+	  resolved;
+
+	  try {
+	    if (promise === value) {
+	      throw new TypeError("A promises callback cannot return that same promise.");
+	    }
+
+	    if (objectOrFunction(value)) {
+	      then = value.then;
+
+	      if (isFunction(then)) {
+	        then.call(value, function(val) {
+	          if (resolved) { return true; }
+	          resolved = true;
+
+	          if (value !== val) {
+	            resolve(promise, val);
+	          } else {
+	            fulfill(promise, val);
+	          }
+	        }, function(val) {
+	          if (resolved) { return true; }
+	          resolved = true;
+
+	          reject(promise, val);
+	        });
+
+	        return true;
+	      }
+	    }
+	  } catch (error) {
+	    if (resolved) { return true; }
+	    reject(promise, error);
+	    return true;
+	  }
+
+	  return false;
+	}
+
+	function resolve(promise, value) {
+	  if (promise === value) {
+	    fulfill(promise, value);
+	  } else if (!handleThenable(promise, value)) {
+	    fulfill(promise, value);
+	  }
+	}
+
+	function fulfill(promise, value) {
+	  if (promise._state !== PENDING) { return; }
+	  promise._state = SEALED;
+	  promise._detail = value;
+
+	  config.async(publishFulfillment, promise);
+	}
+
+	function reject(promise, reason) {
+	  if (promise._state !== PENDING) { return; }
+	  promise._state = SEALED;
+	  promise._detail = reason;
+
+	  config.async(publishRejection, promise);
+	}
+
+	function publishFulfillment(promise) {
+	  publish(promise, promise._state = FULFILLED);
+	}
+
+	function publishRejection(promise) {
+	  publish(promise, promise._state = REJECTED);
+	}
+
+	exports.Promise = Promise;
+
+/***/ },
+/* 228 */
+/***/ function(module, exports) {
+
+	"use strict";
+	var config = {
+	  instrument: false
+	};
+
+	function configure(name, value) {
+	  if (arguments.length === 2) {
+	    config[name] = value;
+	  } else {
+	    return config[name];
+	  }
+	}
+
+	exports.config = config;
+	exports.configure = configure;
+
+/***/ },
+/* 229 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function objectOrFunction(x) {
+	  return isFunction(x) || (typeof x === "object" && x !== null);
+	}
+
+	function isFunction(x) {
+	  return typeof x === "function";
+	}
+
+	function isArray(x) {
+	  return Object.prototype.toString.call(x) === "[object Array]";
+	}
+
+	// Date.now is not available in browsers < IE9
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now#Compatibility
+	var now = Date.now || function() { return new Date().getTime(); };
+
+
+	exports.objectOrFunction = objectOrFunction;
+	exports.isFunction = isFunction;
+	exports.isArray = isArray;
+	exports.now = now;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	/* global toString */
+
+	var isArray = __webpack_require__(229).isArray;
+	var isFunction = __webpack_require__(229).isFunction;
+
+	/**
+	  Returns a promise that is fulfilled when all the given promises have been
+	  fulfilled, or rejected if any of them become rejected. The return promise
+	  is fulfilled with an array that gives all the values in the order they were
+	  passed in the `promises` array argument.
+
+	  Example:
+
+	  ```javascript
+	  var promise1 = RSVP.resolve(1);
+	  var promise2 = RSVP.resolve(2);
+	  var promise3 = RSVP.resolve(3);
+	  var promises = [ promise1, promise2, promise3 ];
+
+	  RSVP.all(promises).then(function(array){
+	    // The array here would be [ 1, 2, 3 ];
+	  });
+	  ```
+
+	  If any of the `promises` given to `RSVP.all` are rejected, the first promise
+	  that is rejected will be given as an argument to the returned promises's
+	  rejection handler. For example:
+
+	  Example:
+
+	  ```javascript
+	  var promise1 = RSVP.resolve(1);
+	  var promise2 = RSVP.reject(new Error("2"));
+	  var promise3 = RSVP.reject(new Error("3"));
+	  var promises = [ promise1, promise2, promise3 ];
+
+	  RSVP.all(promises).then(function(array){
+	    // Code here never runs because there are rejected promises!
+	  }, function(error) {
+	    // error.message === "2"
+	  });
+	  ```
+
+	  @method all
+	  @for RSVP
+	  @param {Array} promises
+	  @param {String} label
+	  @return {Promise} promise that is fulfilled when all `promises` have been
+	  fulfilled, or rejected if any of them become rejected.
+	*/
+	function all(promises) {
+	  /*jshint validthis:true */
+	  var Promise = this;
+
+	  if (!isArray(promises)) {
+	    throw new TypeError('You must pass an array to all.');
+	  }
+
+	  return new Promise(function(resolve, reject) {
+	    var results = [], remaining = promises.length,
+	    promise;
+
+	    if (remaining === 0) {
+	      resolve([]);
+	    }
+
+	    function resolver(index) {
+	      return function(value) {
+	        resolveAll(index, value);
+	      };
+	    }
+
+	    function resolveAll(index, value) {
+	      results[index] = value;
+	      if (--remaining === 0) {
+	        resolve(results);
+	      }
+	    }
+
+	    for (var i = 0; i < promises.length; i++) {
+	      promise = promises[i];
+
+	      if (promise && isFunction(promise.then)) {
+	        promise.then(resolver(i), reject);
+	      } else {
+	        resolveAll(i, promise);
+	      }
+	    }
+	  });
+	}
+
+	exports.all = all;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	/* global toString */
+	var isArray = __webpack_require__(229).isArray;
+
+	/**
+	  `RSVP.race` allows you to watch a series of promises and act as soon as the
+	  first promise given to the `promises` argument fulfills or rejects.
+
+	  Example:
+
+	  ```javascript
+	  var promise1 = new RSVP.Promise(function(resolve, reject){
+	    setTimeout(function(){
+	      resolve("promise 1");
+	    }, 200);
+	  });
+
+	  var promise2 = new RSVP.Promise(function(resolve, reject){
+	    setTimeout(function(){
+	      resolve("promise 2");
+	    }, 100);
+	  });
+
+	  RSVP.race([promise1, promise2]).then(function(result){
+	    // result === "promise 2" because it was resolved before promise1
+	    // was resolved.
+	  });
+	  ```
+
+	  `RSVP.race` is deterministic in that only the state of the first completed
+	  promise matters. For example, even if other promises given to the `promises`
+	  array argument are resolved, but the first completed promise has become
+	  rejected before the other promises became fulfilled, the returned promise
+	  will become rejected:
+
+	  ```javascript
+	  var promise1 = new RSVP.Promise(function(resolve, reject){
+	    setTimeout(function(){
+	      resolve("promise 1");
+	    }, 200);
+	  });
+
+	  var promise2 = new RSVP.Promise(function(resolve, reject){
+	    setTimeout(function(){
+	      reject(new Error("promise 2"));
+	    }, 100);
+	  });
+
+	  RSVP.race([promise1, promise2]).then(function(result){
+	    // Code here never runs because there are rejected promises!
+	  }, function(reason){
+	    // reason.message === "promise2" because promise 2 became rejected before
+	    // promise 1 became fulfilled
+	  });
+	  ```
+
+	  @method race
+	  @for RSVP
+	  @param {Array} promises array of promises to observe
+	  @param {String} label optional string for describing the promise returned.
+	  Useful for tooling.
+	  @return {Promise} a promise that becomes fulfilled with the value the first
+	  completed promises is resolved with if the first completed promise was
+	  fulfilled, or rejected with the reason that the first completed promise
+	  was rejected with.
+	*/
+	function race(promises) {
+	  /*jshint validthis:true */
+	  var Promise = this;
+
+	  if (!isArray(promises)) {
+	    throw new TypeError('You must pass an array to race.');
+	  }
+	  return new Promise(function(resolve, reject) {
+	    var results = [], promise;
+
+	    for (var i = 0; i < promises.length; i++) {
+	      promise = promises[i];
+
+	      if (promise && typeof promise.then === 'function') {
+	        promise.then(resolve, reject);
+	      } else {
+	        resolve(promise);
+	      }
+	    }
+	  });
+	}
+
+	exports.race = race;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function resolve(value) {
+	  /*jshint validthis:true */
+	  if (value && typeof value === 'object' && value.constructor === this) {
+	    return value;
+	  }
+
+	  var Promise = this;
+
+	  return new Promise(function(resolve) {
+	    resolve(value);
+	  });
+	}
+
+	exports.resolve = resolve;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports) {
+
+	"use strict";
+	/**
+	  `RSVP.reject` returns a promise that will become rejected with the passed
+	  `reason`. `RSVP.reject` is essentially shorthand for the following:
+
+	  ```javascript
+	  var promise = new RSVP.Promise(function(resolve, reject){
+	    reject(new Error('WHOOPS'));
+	  });
+
+	  promise.then(function(value){
+	    // Code here doesn't run because the promise is rejected!
+	  }, function(reason){
+	    // reason.message === 'WHOOPS'
+	  });
+	  ```
+
+	  Instead of writing the above, your code now simply becomes the following:
+
+	  ```javascript
+	  var promise = RSVP.reject(new Error('WHOOPS'));
+
+	  promise.then(function(value){
+	    // Code here doesn't run because the promise is rejected!
+	  }, function(reason){
+	    // reason.message === 'WHOOPS'
+	  });
+	  ```
+
+	  @method reject
+	  @for RSVP
+	  @param {Any} reason value that the returned promise will be rejected with.
+	  @param {String} label optional string for identifying the returned promise.
+	  Useful for tooling.
+	  @return {Promise} a promise that will become rejected with the given
+	  `reason`.
+	*/
+	function reject(reason) {
+	  /*jshint validthis:true */
+	  var Promise = this;
+
+	  return new Promise(function (resolve, reject) {
+	    reject(reason);
+	  });
+	}
+
+	exports.reject = reject;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {"use strict";
+	var browserGlobal = (typeof window !== 'undefined') ? window : {};
+	var BrowserMutationObserver = browserGlobal.MutationObserver || browserGlobal.WebKitMutationObserver;
+	var local = (typeof global !== 'undefined') ? global : (this === undefined? window:this);
+
+	// node
+	function useNextTick() {
+	  return function() {
+	    process.nextTick(flush);
+	  };
+	}
+
+	function useMutationObserver() {
+	  var iterations = 0;
+	  var observer = new BrowserMutationObserver(flush);
+	  var node = document.createTextNode('');
+	  observer.observe(node, { characterData: true });
+
+	  return function() {
+	    node.data = (iterations = ++iterations % 2);
+	  };
+	}
+
+	function useSetTimeout() {
+	  return function() {
+	    local.setTimeout(flush, 1);
+	  };
+	}
+
+	var queue = [];
+	function flush() {
+	  for (var i = 0; i < queue.length; i++) {
+	    var tuple = queue[i];
+	    var callback = tuple[0], arg = tuple[1];
+	    callback(arg);
+	  }
+	  queue = [];
+	}
+
+	var scheduleFlush;
+
+	// Decide what async method to use to triggering processing of queued callbacks:
+	if (typeof process !== 'undefined' && {}.toString.call(process) === '[object process]') {
+	  scheduleFlush = useNextTick();
+	} else if (BrowserMutationObserver) {
+	  scheduleFlush = useMutationObserver();
+	} else {
+	  scheduleFlush = useSetTimeout();
+	}
+
+	function asap(callback, arg) {
+	  var length = queue.push([callback, arg]);
+	  if (length === 1) {
+	    // If length is 1, that means that we need to schedule an async flush.
+	    // If additional callbacks are queued before the queue is flushed, they
+	    // will be processed by this flush that we are scheduling.
+	    scheduleFlush();
+	  }
+	}
+
+	exports.asap = asap;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(4)))
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
+	/*global self*/
+	var RSVPPromise = __webpack_require__(227).Promise;
+	var isFunction = __webpack_require__(229).isFunction;
+
+	function polyfill() {
+	  var local;
+
+	  if (typeof global !== 'undefined') {
+	    local = global;
+	  } else if (typeof window !== 'undefined' && window.document) {
+	    local = window;
+	  } else {
+	    local = self;
+	  }
+
+	  var es6PromiseSupport = 
+	    "Promise" in local &&
+	    // Some of these methods are missing from
+	    // Firefox/Chrome experimental implementations
+	    "resolve" in local.Promise &&
+	    "reject" in local.Promise &&
+	    "all" in local.Promise &&
+	    "race" in local.Promise &&
+	    // Older version of the spec had a resolver object
+	    // as the arg rather than a function
+	    (function() {
+	      var resolve;
+	      new local.Promise(function(r) { resolve = r; });
+	      return isFunction(resolve);
+	    }());
+
+	  if (!es6PromiseSupport) {
+	    local.Promise = RSVPPromise;
+	  }
+	}
+
+	exports.polyfill = polyfill;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25007,8 +25960,7 @@
 	          'h1',
 	          null,
 	          'Popular'
-	        ),
-	        _react2.default.createElement(Carousel, { images: this.props.images })
+	        )
 	      );
 	    }
 	  }]);
@@ -25021,7 +25973,7 @@
 	HomePopular.propTypes = { images: _react2.default.PropTypes.array };
 
 /***/ },
-/* 221 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25036,11 +25988,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _navbar = __webpack_require__(222);
+	var _navbar = __webpack_require__(238);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-	var _footer = __webpack_require__(223);
+	var _footer = __webpack_require__(239);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -25082,7 +26034,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 222 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25272,7 +26224,7 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 223 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25551,7 +26503,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 224 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25566,11 +26518,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _artist_search = __webpack_require__(225);
+	var _artist_search = __webpack_require__(241);
 
 	var _artist_search2 = _interopRequireDefault(_artist_search);
 
-	var _searchable_image_display = __webpack_require__(227);
+	var _searchable_image_display = __webpack_require__(243);
 
 	var _searchable_image_display2 = _interopRequireDefault(_searchable_image_display);
 
@@ -25609,7 +26561,7 @@
 	exports.default = Users;
 
 /***/ },
-/* 225 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25624,7 +26576,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _search_box = __webpack_require__(226);
+	var _search_box = __webpack_require__(242);
 
 	var _search_box2 = _interopRequireDefault(_search_box);
 
@@ -25671,7 +26623,7 @@
 	;
 
 /***/ },
-/* 226 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25725,7 +26677,7 @@
 	};
 
 /***/ },
-/* 227 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25779,7 +26731,7 @@
 	;
 
 /***/ },
-/* 228 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25843,7 +26795,7 @@
 	;
 
 /***/ },
-/* 229 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25911,7 +26863,7 @@
 	;
 
 /***/ },
-/* 230 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25972,7 +26924,7 @@
 	;
 
 /***/ },
-/* 231 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26047,7 +26999,7 @@
 	;
 
 /***/ },
-/* 232 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26062,7 +27014,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _search_box = __webpack_require__(226);
+	var _search_box = __webpack_require__(242);
 
 	var _search_box2 = _interopRequireDefault(_search_box);
 
@@ -26104,7 +27056,7 @@
 	;
 
 /***/ },
-/* 233 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26179,7 +27131,7 @@
 	;
 
 /***/ },
-/* 234 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
