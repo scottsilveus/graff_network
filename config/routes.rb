@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     post 'signin' => 'devise/sessions#create', :as => :user_session
     delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
-  mount MagicLamp::Genie, at: "/magic_lamp" if defined?(MagicLamp)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # You can have the root of your site routed with "root"
