@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -19,14 +19,27 @@
     "url": "https://github.com/scottsilveus/graff_network/issues"
   },
   "homepage": "https://github.com/scottsilveus/graff_network#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "expect": "^1.14.0",
     "history": "^1.17.0",
+    "karma": "0.13.9",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.2",
+    "karma-sinon": "^1.0.4",
+    "karma-sinon-chai": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "1.7.0",
+    "mocha": "^2.4.5",
+    "proquest": "^0.3.0",
     "react": "^0.14.6",
+    "react-addons-test-utils": "^0.14.7",
     "react-dom": "^0.14.6",
     "react-router": "^2.0.0-rc5",
-    "webpack": "^1.12.12"
+    "webpack": "1.12.1"
   }
 }
