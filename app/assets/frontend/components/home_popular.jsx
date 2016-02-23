@@ -9,4 +9,4 @@ export default class HomePopular extends React.Component {
     )
   }
 };
-  HomePopular.propTypes = { images: React.PropTypes.array }
+HomePopular.propTypes = { images: React.PropTypes.array }

@@ -1,3 +1,9 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import TestUtils from 'react-addons-test-utils'
+
+import HomeIndex from '../../../app/assets/frontend/components/home'
+
 describe('HomeIndex', function() {
   var element, component;
 

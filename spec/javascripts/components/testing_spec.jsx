@@ -1,3 +1,10 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import TestUtils from 'react-addons-test-utils'
+
+import CheckboxWithLabel from '../../../app/assets/frontend/components/checkbox_with_label'
+
+
 describe('CheckboxWithLabel', function () {
   var element;
 
